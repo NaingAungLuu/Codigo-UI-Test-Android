@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">UI Test</string>
+    <string name="btm_nav_account">Account</string>
+    <string name="btn_nav_refer">Refer a freind</string>
+    <string name="btm_nav_booking">Booking</string>
+    <string name="btm_nav_rent">Rent A Car</string>
+    <string name="tv_date_and_time"><![CDATA[Date & Time]]></string>
+    <string name="tooltip_locate">Locate</string>
+    <string name="tooltip_notifications">Notifications</string>
+    <string name="dummy_car_model">Mazda 3</string>
+    <string name="dummy_car_serial_number">SMS100Z</string>
+    <string name="tv_divider">.</string>
+    <string name="dummy_seat_count">5 Seater</string>
+    <string name="btn_filter">Filter</string>
+    <string name="btn_map">Map</string>
+    <string name="dummy_address">194 Punggol Road P100 Multi Storey Car Park</string>
+    <string name="dummy_estimated_total">S$52.00</string>
+</resources>

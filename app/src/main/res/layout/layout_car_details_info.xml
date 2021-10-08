@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutPickUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/margin_medium_3x"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvPickUpLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_1x"
+            android:layout_marginTop="@dimen/margin_medium_1x"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Pick up car at"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/text_size_medium_2x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivPickUpLocation"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_medium_1x"
+            android:layout_marginEnd="@dimen/margin_small_2x"
+
+            android:clickable="true"
+            android:focusable="true"
+            android:foregroundTint="@color/black"
+            android:foreground="?attr/selectableItemBackground"
+            android:src="@drawable/img_map"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/tvPickUpLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvPickUpLabel"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+            />
+
+        <TextView
+            android:id="@+id/tvLocationLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small_1x"
+            android:layout_marginEnd="@dimen/margin_medium_2x"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/dummy_address"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="@dimen/text_size_medium_2x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/ivPickUpLocation" />
+
+        <TextView
+            android:id="@+id/tvLocationUnitLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small_1x"
+            android:layout_marginEnd="@dimen/margin_medium_2x"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Level 4/ Lot 123 - 456"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium_2x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/tvLocationLabel" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGetDirections"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium_1x"
+            android:layout_marginEnd="@dimen/margin_medium_2x"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingTop="@dimen/margin_small_2x"
+            android:paddingBottom="@dimen/margin_small_2x"
+            android:text="Get Directions"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size_small_2x"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/corner_radius_medium"
+            app:icon="@drawable/ic_address"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/dimen_24"
+            app:layout_constraintEnd_toEndOf="@id/tvLocationUnitLabel"
+            app:layout_constraintStart_toStartOf="@id/tvLocationUnitLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvLocationUnitLabel"
+            app:strokeColor="@color/colorTextLightBlack"
+            app:strokeWidth="2dp" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivLocationPreview"
+            android:layout_width="@dimen/dimen_64"
+            android:layout_height="@dimen/dimen_64"
+            android:layout_marginTop="@dimen/margin_medium_1x"
+            android:src="@drawable/img_car_park"
+            android:scaleType="centerCrop"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:foregroundTint="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/ivLocationPreview2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ivPickUpLocation"
+            app:layout_constraintStart_toStartOf="@id/btnGetDirections"
+            app:layout_constraintTop_toBottomOf="@id/btnGetDirections"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivLocationPreview2"
+            android:layout_width="@dimen/dimen_64"
+            android:layout_height="@dimen/dimen_64"
+            android:layout_marginStart="@dimen/margin_small_1x"
+            android:layout_marginTop="@dimen/margin_medium_1x"
+            android:src="@drawable/img_car_park_2"
+            android:scaleType="centerCrop"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:foregroundTint="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/ivLocationPreview3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ivLocationPreview"
+            app:layout_constraintTop_toBottomOf="@id/btnGetDirections"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+            />
+
+        <TextView
+            android:id="@+id/btnMoreImages"
+            android:layout_width="@dimen/dimen_64"
+            android:background="@drawable/bg_stroked_ripple_medium"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_small_1x"
+            android:layout_marginTop="@dimen/margin_medium_1x"
+            android:layout_marginEnd="@dimen/margin_medium_1x"
+            android:src="@drawable/img_car_1"
+            android:text="+10"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/colorTextBlack"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/text_size_medium_3x"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/ivLocationPreview2"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ivLocationPreview2"
+            app:layout_constraintTop_toBottomOf="@id/btnGetDirections" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutEstimatedTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/bg_ripple"
+        android:backgroundTint="@color/white"
+        android:paddingStart="@dimen/margin_medium_1x"
+        android:paddingEnd="@dimen/margin_medium_1x"
+        app:layout_constraintTop_toBottomOf="@id/layoutPickUp"
+        android:layout_marginTop="@dimen/margin_mini_2x"
+        >
+
+        <TextView
+            android:id="@+id/tvEstimatedTotalLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estmiated Total"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="@dimen/text_size_medium_2x"
+            android:layout_margin="@dimen/margin_medium_1x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tvEstimatedTotalHelpTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* Amount is not final"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/colorTextLightBlack"
+            android:textSize="@dimen/text_size_medium_1x"
+            android:layout_marginBottom="@dimen/margin_medium_1x"
+            app:layout_constraintStart_toStartOf="@id/tvEstimatedTotalLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvEstimatedTotalLabel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tvEstimatedTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_estimated_total"
+            android:drawablePadding="@dimen/corner_radius_small"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="@dimen/text_size_medium_2x"
+            android:layout_margin="@dimen/margin_medium_1x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:drawableTint="@color/colorTextBlack"
+            app:drawableEndCompat="@drawable/ic_arrow_right" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorLightGrey"
+            android:layout_marginStart="@dimen/margin_medium_1x"
+            android:layout_marginEnd="@dimen/margin_medium_1x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/bg_ripple"
+        android:backgroundTint="@color/white"
+        android:paddingStart="@dimen/margin_medium_1x"
+        android:paddingEnd="@dimen/margin_medium_1x"
+        app:layout_constraintTop_toBottomOf="@id/layoutEstimatedTotal"
+        >
+
+        <TextView
+            android:id="@+id/tvHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Need Help?"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="@dimen/text_size_medium_2x"
+            android:layout_marginStart="@dimen/margin_medium_1x"
+            android:layout_marginTop="@dimen/margin_medium_2x"
+            android:layout_marginBottom="@dimen/margin_medium_2x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/ivHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium_1x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_help"
+            app:drawableEndCompat="@drawable/ic_arrow_right" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorLightGrey"
+            android:layout_marginStart="@dimen/margin_medium_1x"
+            android:layout_marginEnd="@dimen/margin_medium_1x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutCancelBooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/bg_ripple"
+        android:backgroundTint="@color/white"
+        android:paddingStart="@dimen/margin_medium_1x"
+        android:paddingEnd="@dimen/margin_medium_1x"
+        app:layout_constraintTop_toBottomOf="@id/layoutHelp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/tvCancelBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel Booking"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="@dimen/text_size_medium_2x"
+            android:layout_marginStart="@dimen/margin_medium_1x"
+            android:layout_marginTop="@dimen/margin_medium_2x"
+            android:layout_marginBottom="@dimen/margin_medium_2x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/ivCancelBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium_1x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_cancel"
+            app:drawableEndCompat="@drawable/ic_arrow_right" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorLightGrey"
+            android:layout_marginStart="@dimen/margin_medium_1x"
+            android:layout_marginEnd="@dimen/margin_medium_1x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

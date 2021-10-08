@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    brand colors-->
+    <color name="colorPrimary">#0D1842</color>
+    <color name="colorAccent">#28F897</color>
+    <color name="colorSecondary">#E6467C</color>
+    <color name="colorBlue">#2196F3</color>
+    <color name="colorBackground">#EFEFEF</color>
+
+    <color name="black">#202020</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorTextBlack">#202020</color>
+    <color name="colorTextLightBlack">#9F9F9F</color>
+    <color name="colorLightGrey">#D8D8D8</color>
+    <color name="colorDarkGrey">#636363</color>
+    <color name="colorInactive">#7C7C7C</color>
+
+</resources>

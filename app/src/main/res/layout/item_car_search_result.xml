@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/bg_ripple">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivCar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_medium_1x"
+            android:layout_marginTop="@dimen/margin_medium_1x"
+            android:layout_marginBottom="@dimen/margin_medium_1x"
+            android:layout_marginEnd="@dimen/margin_small_1x"
+            android:background="@color/white"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_car_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+        <TextView
+            android:id="@+id/tvCarModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_1x"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/dummy_car_model"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium_3x"
+            app:layout_constraintStart_toEndOf="@id/ivCar"
+            app:layout_constraintTop_toTopOf="@id/ivCar" />
+
+        <TextView
+            android:id="@+id/tvCarSerialNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_1x"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/dummy_car_serial_number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium_1x"
+            app:layout_constraintEnd_toStartOf="@+id/tvTextDivider"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/ivCar"
+            app:layout_constraintTop_toBottomOf="@id/tvCarModel" />
+
+        <TextView
+            android:id="@+id/tvTextDivider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small_1x"
+            android:fontFamily="@font/poppins_extra_bold"
+            android:gravity="top"
+            android:text="@string/tv_divider"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/text_size_large_1x"
+            app:layout_constraintBottom_toBottomOf="@id/tvCarSerialNumber"
+            app:layout_constraintEnd_toStartOf="@+id/tvCarSeatCount"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvCarSerialNumber"
+            app:layout_constraintTop_toTopOf="@id/tvCarSerialNumber" />
+
+        <TextView
+            android:id="@+id/tvCarSeatCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small_1x"
+            android:layout_marginEnd="@dimen/margin_medium_1x"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/dummy_seat_count"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium_1x"
+            app:layout_constraintEnd_toStartOf="@+id/tvCarDistance"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvTextDivider"
+            app:layout_constraintTop_toBottomOf="@id/tvCarModel" />
+
+
+        <TextView
+            android:id="@+id/tvCarDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium_1x"
+            android:background="@drawable/bg_stroked_medium"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingStart="@dimen/margin_small_1x"
+            android:paddingTop="@dimen/margin_mini_1x"
+            android:paddingEnd="@dimen/margin_small_1x"
+            android:paddingBottom="@dimen/margin_mini_1x"
+            android:text="0.5km away"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_small_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCarSeatCount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvCarSeatCount" />
+
+        <TextView
+            android:id="@+id/tvRentalFeeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small_2x"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Rental Fee"
+            android:textColor="@color/colorTextLightBlack"
+            android:textSize="@dimen/text_size_small_2x"
+            app:layout_constraintStart_toStartOf="@id/tvCarModel"
+            app:layout_constraintTop_toBottomOf="@id/tvCarSerialNumber" />
+
+        <TextView
+            android:id="@+id/tvRentalFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium_2x"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Fr. $3.00/hr"
+            android:textColor="@color/colorLightGrey"
+            android:textSize="@dimen/margin_medium_1x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvCarModel"
+            app:layout_constraintTop_toBottomOf="@id/tvRentalFeeLabel" />
+
+        <TextView
+            android:id="@+id/tvMileageFeeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_1x"
+            android:layout_marginTop="@dimen/margin_small_2x"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Mileage Fee"
+            android:textColor="@color/colorTextLightBlack"
+            android:textSize="@dimen/text_size_small_2x"
+            app:layout_constraintStart_toEndOf="@id/tvRentalFee"
+            app:layout_constraintTop_toBottomOf="@id/tvCarSerialNumber" />
+
+        <TextView
+            android:id="@+id/tvMileageFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium_1x"
+            android:fontFamily="@font/poppins_medium"
+            android:text="$0.40/km"
+            android:textColor="@color/colorLightGrey"
+            android:textSize="@dimen/margin_medium_1x"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvMileageFeeLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvMileageFeeLabel" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

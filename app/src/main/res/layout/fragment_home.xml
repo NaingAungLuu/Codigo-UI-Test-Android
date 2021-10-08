@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layoutDescription="@xml/fragment_home_xml_constraintlayout_scene">
+
+        <com.otaliastudios.zoom.ZoomLayout
+            android:id="@+id/zoomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            app:alignment="center"
+            app:flingEnabled="true"
+            app:horizontalPanEnabled="true"
+            app:maxZoom="2.5"
+            app:maxZoomType="zoom"
+            app:minZoom="0.7"
+            app:minZoomType="zoom"
+            app:oneFingerScrollEnabled="true"
+            app:overPinchable="true"
+            app:overScrollHorizontal="true"
+            app:overScrollVertical="true"
+            app:scrollEnabled="true"
+            app:threeFingersScrollEnabled="true"
+            app:transformation="centerInside"
+            app:transformationGravity="auto"
+            app:twoFingersScrollEnabled="true"
+            app:verticalPanEnabled="true"
+            app:zoomEnabled="true"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img_map" />
+
+        </com.otaliastudios.zoom.ZoomLayout>
+
+        <TextView
+            android:id="@+id/tvRentCarLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small_1x"
+            android:layout_marginBottom="@dimen/margin_medium_1x"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Rent A Car"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/text_size_large_1x"
+            app:layout_constraintBottom_toTopOf="@id/layoutRent"
+            app:layout_constraintStart_toStartOf="@id/layoutRent" />
+
+        <ImageView
+            android:id="@+id/btnLocate"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_marginEnd="@dimen/margin_small_1x"
+            android:background="@drawable/bg_ripple_circle"
+            android:clickable="true"
+            android:contentDescription="@string/tooltip_locate"
+            android:elevation="100dp"
+            android:focusable="true"
+            android:padding="@dimen/margin_small_1x"
+            android:src="@drawable/ic_locate"
+            app:layout_constraintBottom_toBottomOf="@id/tvRentCarLabel"
+            app:layout_constraintEnd_toEndOf="@id/layoutRent" />
+
+        <ImageView
+            android:id="@+id/btnNotifications"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_marginTop="@dimen/margin_medium_3x"
+            android:background="@drawable/bg_ripple_circle"
+            android:clickable="true"
+            android:contentDescription="@string/tooltip_notifications"
+            android:elevation="200dp"
+            android:focusable="true"
+            android:padding="@dimen/margin_small_1x"
+            android:src="@drawable/ic_notification"
+            app:layout_constraintEnd_toEndOf="@id/btnLocate"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnFullScreen"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_marginTop="@dimen/margin_medium_3x"
+            android:background="@drawable/bg_ripple_circle"
+            android:clickable="true"
+            android:contentDescription="@string/tooltip_notifications"
+            android:elevation="200dp"
+            android:focusable="true"
+            android:padding="@dimen/margin_small_1x"
+            android:src="@drawable/ic_full_screen"
+            app:layout_constraintStart_toStartOf="@id/tvRentCarLabel"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/colorTextBlack" />
+
+        <include
+            android:id="@+id/layoutRent"
+            layout="@layout/layout_rent_a_car"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_1x"
+            android:layout_marginEnd="@dimen/margin_medium_1x"
+            android:layout_marginBottom="@dimen/margin_medium_2x"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            style="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface"
+            android:layout_width="0dp"
+            android:layout_height="86dp"
+            android:background="@color/colorPrimary"
+            android:elevation="0dp"
+            android:paddingStart="@dimen/margin_medium_1x"
+            android:paddingEnd="@dimen/margin_medium_1x"
+            android:textSize="@dimen/text_size_medium_2x"
+            android:translationZ="10dp"
+            app:elevation="0dp"
+            app:itemIconPadding="@dimen/margin_medium_1x"
+            app:itemIconSize="@dimen/dimen_24"
+            app:itemIconTint="@color/color_btm_nav_icon"
+            app:itemRippleColor="@color/colorAccent"
+            app:itemTextAppearanceActive="@style/TextAppearance.BottomNavView.Active"
+            app:itemTextAppearanceInactive="@style/TextAppearance.BottomNavView.InActive"
+            app:itemTextColor="@color/color_btm_nav_icon"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/mnu_main">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/tvSearchResultCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="300 +"
+        android:textSize="@dimen/text_size_medium_3x"
+        android:textColor="@color/colorSecondary"
+        android:layout_marginStart="@dimen/margin_medium_1x"
+        android:layout_marginTop="@dimen/margin_medium_1x"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvSearchResultCountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cars found"
+        android:textSize="@dimen/text_size_medium_3x"
+        android:textColor="@color/white"
+        android:layout_marginStart="@dimen/margin_small_1x"
+        app:layout_constraintStart_toEndOf="@id/tvSearchResultCount"
+        app:layout_constraintTop_toTopOf="@id/tvSearchResultCount"
+        app:layout_constraintBottom_toBottomOf="@id/tvSearchResultCount"
+        />
+
+    <TextView
+        android:id="@+id/btnMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_map"
+        android:textColor="@color/colorTextBlack"
+        android:fontFamily="@font/poppins_medium"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/bg_ripple_rounded_button"
+        android:paddingTop="@dimen/margin_mini_2x"
+        android:paddingBottom="@dimen/margin_mini_2x"
+        android:paddingStart="@dimen/margin_medium_1x"
+        android:paddingEnd="@dimen/margin_medium_1x"
+        android:layout_marginEnd="@dimen/margin_medium_1x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvSearchResultCount"
+        />
+
+    <TextView
+        android:id="@+id/btnFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_filter"
+        android:textColor="@color/colorTextBlack"
+        android:fontFamily="@font/poppins_medium"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/bg_ripple_rounded_button"
+        android:paddingTop="@dimen/margin_mini_2x"
+        android:paddingBottom="@dimen/margin_mini_2x"
+        android:paddingStart="@dimen/margin_medium_1x"
+        android:paddingEnd="@dimen/margin_medium_1x"
+        android:layout_marginEnd="@dimen/margin_medium_1x"
+        app:layout_constraintEnd_toStartOf="@id/btnMap"
+        app:layout_constraintTop_toTopOf="@id/tvSearchResultCount"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium_1x"
+        app:layout_constraintTop_toBottomOf="@id/btnMap"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_car_search_result"
+        android:paddingBottom="@dimen/margin_large_1x"
+        android:clipToPadding="false"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
